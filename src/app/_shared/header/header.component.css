@@ -1,0 +1,22 @@
+@media (max-width: 1100px) {
+  .dsa-headline {
+    margin-left: 0.5em;
+  }
+}
+@media (min-width: 1100px) {
+  .dsa-headline {
+    margin: 0.5em;
+  }
+}
+
+@media (max-width: 1100px) {
+  .right-box {
+    margin: 0.5em;
+  }
+}
+@media (min-width: 1100px) {
+  .right-box {
+    margin: 0.5em;
+  }
+}
+

@@ -1,0 +1,6 @@
+<div class="container-fluid w-100">
+  <h4>Liste der Abenteuer:</h4>
+  <div class="list-group list-group-sm mt-4">
+    <dsa-dsa-link *ngFor="let adventure of adventures" [type]="DataType.ADVENTURE" [data_id]=adventure [list]="true"></dsa-dsa-link>
+  </div>
+</div>

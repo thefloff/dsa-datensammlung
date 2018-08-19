@@ -1,0 +1,101 @@
+$dsa-light: #f7f0d9;
+$dsa-normal: #e0d4a9;
+$dsa-dark: #e0c386;
+
+h6 {
+  margin-top: 1em;
+}
+
+h5 {
+  margin-top: 1em;
+}
+
+dsa-sidebar .list-group-flush{
+  min-width: 12em;
+  border-bottom: 1px solid $dsa-dark;
+}
+
+.data_image {
+  max-width: 100%;
+  max-height: 25em;
+}
+
+.wa_link {
+  position: absolute;
+  z-index: 1;
+  top: 2em;
+  right: 3em;
+}
+
+// list
+.list-group-flush .list-group-item{
+  border-color: $dsa-dark;
+}
+.list-group-flush .list-group-item:hover{
+  background: $dsa-light;
+}
+
+.list-group-sm {
+  border-bottom: 1px solid $dsa-dark;
+  max-width: 20em;
+}
+.list-group-sm .list-group-item {
+  height: 2em;
+  padding-top: 2px;
+  border: 1px solid $dsa-dark;
+  border-bottom: 0;
+  border-radius: 0;
+}
+.list-group-sm .list-group-item:hover {
+  background: $dsa-light;
+}
+.list-group-sm .card {
+  border: 1px solid $dsa-dark;
+  border-radius: 0;
+  border-bottom: 0;
+}
+
+// collapse
+.small-collapse {
+  max-width: 30em;
+  margin-bottom: 1em;
+}
+
+// colors
+.bg-dsa-dark {
+  background: $dsa-dark;
+}
+
+.bg-dsa-normal {
+  background: $dsa-normal;
+}
+
+.border-dsa-dark {
+  border: 2px solid $dsa-dark;
+}
+
+// buttons
+.btn {
+  border-radius: 0;
+}
+
+.btn-dsa-dark {
+  background: $dsa-dark;
+  border-color: darkgrey;
+}
+.btn-dsa-dark:hover {
+  background: $dsa-normal;
+}
+
+.btn-dsa-normal {
+  background: $dsa-normal;
+  border-color: $dsa-dark;
+}
+.btn-dsa-normal:hover {
+  background: $dsa-light;
+}
+
+.btn-dsa-link {
+  color: $dsa-dark;
+  text-underline: $dsa-dark;
+}

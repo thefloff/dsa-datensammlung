@@ -1,0 +1,17 @@
+<div class="w-100">
+  <div *ngIf="!editing" class="d-inline-flex flex-column">
+    <div Markdown [data]="data.linked"></div>
+    <div>
+      <div class="btn btn-sm bg-dsa-normal m-1 ml-0" (click)="startEdit()">Bearbeiten</div>
+    </div>
+  </div>
+  <div *ngIf="editing" class="d-inline-flex flex-column w-100" [formGroup]="inputGroup">
+    <textarea class="w-100 border-dsa-dark" style="min-height: 10em" [formControlName]="'commentInput'">{{data}}</textarea>
+    <div class="d-flex">
+      <div class="btn btn-sm bg-dsa-normal m-1 ml-0" (click)="commit()">Speichern</div>
+      <div class="btn btn-sm bg-dsa-normal m-1 ml-0" (click)="abbort()">Abbrechen</div>
+      <a class="btn btn-sm btn-link btn-dsa-link m-1 ml-0" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>
+    </div>
+  </div>
+
+</div>

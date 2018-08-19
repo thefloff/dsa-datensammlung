@@ -1,0 +1,33 @@
+<div class="container-fluid w-100" *ngIf="character">
+  <h4>{{character.name}}</h4>
+
+  <div class="row">
+
+    <div class="col-12 col-xl-9 order-2 order-xl-1">
+      <div>
+        <div *ngIf="pdfUrl" href="#pdfCollaps" class="btn btn-dsa-normal w-100 mt-4" (click)="isCollapsed = !isCollapsed"
+             [attr.aria-expanded]="!isCollapsed" aria-controls="pdfCollapse">Heldenbogen</div>
+        <div id="pdfCollapse" [ngbCollapse]="isCollapsed">
+          <embed class="e2e-iframe-untrusted-src w-100" [src]=pdfUrl height="900" type='application/pdf'>
+        </div>
+      </div>
+
+      <div *ngIf="character.backstory">
+        <h5>Hintergrundgeschichte</h5>
+        <div Markdown [data]="character.backstory"></div>
+      </div>
+    </div>
+
+    <div class="col-12 col-xl-3 order-1 order-xl-2">
+      <div *ngIf="character.description">
+        <h5>Beschreibung</h5>
+        <div Markdown [data]="character.description"></div>
+      </div>
+
+      <h5>Notitzen</h5>
+      <dsa-comment-box [dataType]="DataType.CHARACTER" [dataId]="character.id"></dsa-comment-box>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+{
+  "name": {
+    "value": "Uborasha"
+  },
+  "image": {
+    "value": "uborasha.jpg"
+  },
+  "owner": {
+    "value": "<gilgamosh>"
+  },
+  "type": {
+    "value": "Gepanzerte Karacke"
+  },
+  "masts": {
+    "value": 3
+  },
+  "armament": {
+    "value": "TODO",
+    "permissions": ["meisterF"]
+  },
+  "armor": {
+    "value": "Bleibeschichtung"
+  },
+  "captain": {
+    "value": "<gilgamosh>"
+  },
+  "nrCrew": {
+    "value": "80",
+    "permissions": ["meisterF"]
+  },
+  "permissions": [
+    "meisterF"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "name": {
+    "value": "Kellun"
+  },
+  "notes": {
+    "value": [
+      "kleines Städtchen mit Mauern",
+      "gut befestigter großer Hafen, da ehem. Militärhafen"
+    ]
+  },
+  "taverns": {
+    "value": [
+      {
+        "name": "Die Duftende Gasse",
+        "notes": [
+          "<aFinn> hat hier die Heldengruppe rekrutiert",
+          "liegt in einer stinkenden Gasse direkt am Hafen",
+          "heruntergekommen, dunkel"
+        ],
+        "permissions": [
+          "spieler"
+        ]
+      },
+      {
+        "name": "Die Augenklappe",
+        "notes": [
+          "gut gepflegtes Steinhaus",
+          "sauber, gutes Essen",
+          "Gästezimmer (1s/Nacht)",
+          "Wirtin hat <ramox> nicht verraten"
+        ],
+        "permissions": [
+          "spieler"
+        ]
+      }
+    ]
+  },
+  "shops": {
+    "value": [
+      {"name": "Obststand"},
+      {"name": "Gemüsestand"},
+      {"name": "Viehstand",
+       "notes": ["hat genau eine Ente"]},
+      {"name": "Werft",
+       "notes": ["Rest der alten Militärwerft",
+                "nur teilweise in Betrieb"]},
+      {"name": "Schneider"},
+      {"name": "Werkzeugschmied"},
+      {"name": "Lederer"},
+      {"name": "Fleischer"}
+    ]
+  },
+  "temples": {
+    "value": [
+      {"name": "Efferd"},
+      {"name": "Tsa",
+       "notes": ["SEHR unsteter Geweihter"]}
+    ]
+  },
+  "others": {
+    "value": [
+      {"name": "Rathaus",
+       "permissions": ["meisterF"]},
+      {"name": "Kaserne",
+        "permissions": ["meisterF"]},
+      {"name": "Lagerhäuser am Hafen"},
+      {"name": "Jäger vor der Stadt",
+        "permissions": ["meisterF"]},
+      {"name": "Mühle neben der Stadt",
+        "permissions": ["meisterF"]}
+    ]
+  },
+  "permissions": [
+    "spieler"
+  ]
+}

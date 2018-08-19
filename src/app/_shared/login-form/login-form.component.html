@@ -1,0 +1,25 @@
+<div class="bg-dsa-dark">
+  <div class="modal-header">
+    <h5 class="modal-title">Login</h5>
+  </div>
+  <div>
+    <div class="modal-body">
+      <div class="p-1 d-flex flex-column">
+          <div class="form-group row mr-2">
+            <label class="col-form-label-sm col-3" for="email_login">Email</label>
+            <input type="email" class="form-control-sm col-9 bg-dsa-normal" id="email_login" placeholder="Email eingeben"
+                   [(ngModel)]="email_input">
+          </div>
+          <div class="form-group row mr-2">
+            <label class="col-form-label-sm col-3" for="password_login">Passwort</label>
+            <input type="password" class="form-control-sm col-9 bg-dsa-normal" id="password_login" placeholder="Passwort eingeben"
+                   [(ngModel)]="password_input">
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-dsa-normal" (click)="activeModal.dismiss('Abbrechen clicked')">Abbrechen</button>
+      <button type="submit" class="btn btn-dsa-normal" (click)="submitLoginForm()">Login</button>
+    </div>
+  </div>
+</div>

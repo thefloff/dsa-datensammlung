@@ -1,0 +1,85 @@
+<div class="container-fluid w-100"  *ngIf="ship">
+  <h4>{{ship.name}}</h4>
+
+  <div class="row">
+
+    <div class="col-12 col-xl-6">
+      <div *ngIf="imgUrl">
+        <img class="data_image mt-4" [src]=imgUrl>
+      </div>
+
+      <div *ngIf="ship.damageNotes">
+        <h5>Zustand</h5>
+        <div>
+          <ul>
+            <li *ngFor="let note of ship.damageNotes">
+              <span Markdown [data]=note></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-xl-6">
+      <table class="table table-sm mt-4">
+        <tbody>
+        <tr *ngIf="ship.owner">
+          <th scope="row">Besitzer</th>
+          <td><span Markdown [data]="ship.owner"></span></td>
+        </tr>
+        <tr *ngIf="ship.type">
+          <th scope="row">Typ</th>
+          <td>{{ship.type}}</td>
+        </tr>
+        <tr *ngIf="ship.masts">
+          <th scope="row">Masten</th>
+          <td>{{ship.masts}}</td>
+        </tr>
+        <tr *ngIf="ship.armament">
+          <th scope="row">Bewaffnung</th>
+          <td>{{ship.armament}}</td>
+        </tr>
+        <tr *ngIf="ship.armor">
+          <th scope="row">Panzerung</th>
+          <td>{{ship.armor}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Besatzung</th>
+          <td>
+            <ul>
+              <li *ngIf="ship.captain">
+                Kapitän: <span Markdown [data]="ship.captain"></span>
+              </li>
+              <li *ngIf="ship.cook">
+                Koch: <span Markdown [data]="ship.cook"></span>
+              </li>
+              <span *ngIf="ship.nrCrew">{{ship.nrCrew}}</span>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <h5>Notitzen</h5>
+        <dsa-comment-box [dataType]="DataType.SHIP" [dataId]="ship.id"></dsa-comment-box>
+      </div>
+
+      <div *ngIf="(ship.speedBack || ship.speedBack === 0) &&
+              (ship.speedLeft || ship.speedLeft === 0) &&
+              (ship.speedRight || ship.speedRight === 0) &&
+              (ship.speedFront || ship.speedFront === 0) &&
+              (ship.mobility || ship.mobility === 0)">
+        <h5>Geschwindigkeit</h5>
+        <dsa-ship-movement-view
+        [speed_back]="ship.speedBack"
+        [speed_front]="ship.speedFront"
+        [speed_left]="ship.speedLeft"
+        [speed_right]="ship.speedRight"
+        [maneuver]="ship.mobility"></dsa-ship-movement-view>
+      </div>
+    </div>
+
+  </div>
+
+</div>

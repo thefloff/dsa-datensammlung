@@ -1,0 +1,9 @@
+<div class="container-fluid w-100">
+  <h4>Liste der Orte:</h4>
+  <div [hidden]="!canSeeTowns">
+    <h6 class="mt-3">Städte:</h6>
+    <div class="list-group list-group-sm">
+      <dsa-dsa-link *ngFor="let location of towns" [type]="DataType.LOCATION" [data_id]=location [list]="true"></dsa-dsa-link>
+    </div>
+  </div>
+</div>

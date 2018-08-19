@@ -1,0 +1,70 @@
+{
+  "name": {
+    "value": "01 - Piratenangriff"
+  },
+  "planning": {
+    "value": [
+      "###### Abfahrt in Kellun",
+      "Spieler sind in/kommen nach <kellun>",
+      "Aus diversen Gründen müssen sie die Stadt verlassen oder wollen auf einem Schiff anheuern.",
+      "Die Spieler bekommen einen Hinweis, dass in den Hafentavernen öfters Kapitäne nach Matrosen suchen.",
+      "In der Duftenden Gasse sitzt <afinn.",
+      "Er sitzt alleine an einem Tisch mit einem Buch vor sich und sieht unglücklich in die Runde. Kein Geschirr auf seinem Tisch, unangerührter Humpen.",
+      "Wenn jemand sich zu ihm setzt versucht er ihn zu rekrutieren. Er bietet 4% des Gewinns, weniger bei fehlenden",
+      "Seefahrtkenntnissen, mehr bei Zusatzkenntnissen wie Tischlerei. Bezahlung nach Erfüllung des Auftrags.",
+      "Einfacher Transport nach Nostria, Fracht wird nicht bekannt gegeben.",
+      "Das Schiff ist die <moewe>, dort sollen sich die Spieler am nächsten Tag zu Mittag einfinden.",
+      "Sie bekommen eine kurze Erklärung wo was ist (keine Führung).",
+      "Wenn ein Spieler die Küche betritt sieht er <motuiti> mit einem Fleischerbeil -> furchteinflößend.",
+      "Abfahrt.",
+      "###### Fahrt Richtung Nostria",
+      "Die Fahrt verläuft über große Teile ruhig, genug Zeit um Seefahrt zu lernen.",
+      "Einige andere Schiffe sind ebenfalls unterwegs, die meisten kommen nicht zu nahe.",
+      "###### Begegnung mit Sassafras",
+      "Zwischen den Inseln vor Havena nimmt eine wendige Karavelle Abfangkurs auf die <moewe>.",
+      "Sie hissen eine rote Fahne mit einem schwarzen Totenkopf. Flucht nicht möglich.",
+      "Sobald die <desideria> nah genug ist um die Crew zu sehen wird die Flagge wieder gesenkt.",
+      "Der Kapitän des anderen Schiffes (<dSassafras>) nickt <aFinn> zu ohne die Miene zu verziehen. Die Karavelle dreht wieder ab. <aFinn> möchte das nicht erklären.",
+      "###### Fahrt an Havena vorbei",
+      "<aFinn> möchte nicht in Havena anlegen, keine Erklärung.",
+      "Zu sehen sind der Leuchtturm, in der Entfernung die Stadt, viele Schiffe, etwas Militär.",
+      "Es geht weiter die Küste entlang.",
+      "###### Angriff der Freibeuter",
+      "Ein Gewitter zieht auf.",
+      "Kurz nach der Grenze zu Nostria kommt wieder einmal ein Schiff entgegen (<birsel>).",
+      "Das Schiff geht auf Abfangkurs und versucht neben das Schiff der Spieler zu kommen.",
+      "An Bord sind Andergaster Freibeuter, sie werfen Enterhaken.",
+      "<aFinn> rennt in seine Kajüte und kommt mit Säbel und Pistolengurt zurück. Er beginnt die Seile der geworfenen Enterhaken zu durchschneiden.",
+      "Trotz seiner Bemühungen und der der Spieler gelingt es einigen Piraten das Schiff zu erklimmen und sie schneiden die Seile zur Takelage durch wodurch sie herunterfällt und unter anderem den Kapitän",
+      "unter sich begräbt.",
+      "Ein Pirat springt auf den Segelhügel unter dem sich der Kapitän befindet und sticht seinen Säbel hinein. Der Hügel färbt sich langsam rot.",
+      "Es kommt zu einem Kampf an Border der <moewe>.",
+      "In geeignetem Augneblick taucht <motuiti> von unter Deck auf und greift in den Kampf ein mit seinem großen Sklaventöter.",
+      "Die Freibeuter sind so eingeschüchtert, dass sie wieder zurück auf ihr Schiff fliehen, die Seile kappen und abkehren.",
+      "ALTERNATIVE: Den Helden gelingt es die Freibeuter zu besiegen und sie haben die Wahl die <birsel> zu übernehmen.",
+      "###### Nachspiel des Kampfes",
+      "Der Körper des Kapitäns wird von unter dem Segel geborgen, <motuiti> stürtzt sich heulend auf ihn.",
+      "Nach einiger Zeit geht er unter Deck und kommt kurz darauf mit der Hängematte des Kapitäns zurück. Er wickelt ihn damit ein und beginnt die Hängematte zuzunähen.",
+      "Zuvor nimmt er dem Kapitän einen Schnlüsselbund ab den dieser am Gürtel getragen hatte und gibt ihn den Abenteurern.",
+      "Als er fertig ist mit dem Zunähen hieft er den Kapitän auf die Reling und lässt ihn noch immer weinend ins Meer gleiten.",
+      "Die Helden können jetzt die Kapitänskajüte untersuchen. Einer der Schlüssel passt für eine Lade im Schreibtisch, darin befindet sich ein Teil einer Schatzkarte sowie der Vertrag für die momentane Lieferung und ein Brief (siehe unten). Der andere Schlüssel öffnet die Truhe, in ihr befinden sich ein paar Kleidungsstücke, sowie eine zusammengefaltete schwarze Totenkopfflagge (weißer Totenschädel, darunter 2 gekreuzte Säbel).",
+      "###### Ankunft in Nostria",
+      "Im Hafen von Nostria müssen die Helden Liegegebühr zahlen, 1D / Tag.",
+      "Nach Herumfragen finden sie schnell den Händler der ihre Lieferung erwartet. <eKnitzing> ist gerade dabei einen Arbeiter zu beschimpfen.",
+      "Er erwartet von den Lieferanten, dass sie die Waren selbst bis in sein Lager tragen, zahlt dann aber den vereinbarten Preis von 99D.",
+      "Die Helden sind jetzt frei zu entscheiden was sie weiter machen wollen. Sie können das Geld investieren um eine neue Frachtfahrt zu starten. Sie können die <moewe>",
+      "reparieren und auf Auftragsarbeit hoffen, oder sie verprassen alles, gehen auf Kaperfahrt und versuchen ihr Glück in der Piraterie."
+    ],
+    "permissions": ["meisterF"]
+  },
+  "results": {
+    "value": [
+      "200 AP",
+      "SE Seefahrt",
+      "SE Singen für alle Sänger",
+      "SE Klettern für <salandrion>"
+    ],
+    "permissions": ["spieler"]
+  },
+  "permissions": ["spieler"]
+}

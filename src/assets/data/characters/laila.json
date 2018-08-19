@@ -1,0 +1,96 @@
+{
+  "name": {
+    "value": "Laila saba Shabob"
+  },
+  "notes": {
+    "value": [
+      "Magierin einer schwarzen Schule",
+      "ehemalige Sklavin"
+    ],
+    "permissions": [
+      "laila",
+      "meisterF"
+    ]
+  },
+  "backstory": {
+    "value": [
+      "##### 20 Fragen",
+      "Wie sieht Ihr Held aus?",
+      "Wie trägt er das Haar? Ist er dick, schlank oder gar mager, oder breitschultrig? Hat er ein markantes oder ein anmutiges Gesicht? Hat er bleiche Haut oder ist er wettergegerbt?",
+      "<br>Haar: offen, selten einen Zopf",
+      "<br><br>Gestalt: durchschnittlich, unauffällig, tulamidische Hautfarbe",
+      "Wie wirkt Ihr Held auf einen Fremden?",
+      "Was könnte jemanden der ihn zum ersten Mal sieht, ins Auge fallen? Bewegt er sich elegant oder schwerfällig, sieht er freundlich oder unnahbar aus? Trägt er etwas bei sich, das sofort ins Auge fällt?",
+      "<br>Der Magierstab. Tätowierung auf rechtem Oberarm. Freundliches/ offenes Auftreten.",
+      "<br><br>Wie ist Ihr Held aufgewachsen?",
+      "Hat er Geschwister? Wenn ja, welche? Wie heißen sie, sind sie älter oder jünger und was für ein Verhältnis hat er zu ihnen? Welchen Beruf üben seine Eltern aus? Leben sie noch? Wenn nicht, wie sind sie gestorben? Ist er in einem Dorf, einer Stadt oder vielleicht in einer Hütte mitten im Wald aufgewachsen? War seine Kindheit wohlbehütet, oder musste er schon sehr früh jeden Tag um sein Dasein kämpfen? Gab es besondere Vorfälle in seiner Jugend, die ihn irgendwie geprägt haben, zum Beispiel der Tod eines guten Freundes, eine ungerechte Bestrafung, durch einen Adligen, ein Orküberfall oder das Wunder eines Gottes?",
+      "<br>War Sklave bis ich 8 Jahre alt wurde und meine magischen Talente erkannt wurden. Die Akademie zu Mirham hat mich erstanden und mir nach dem Studium die Freiheit geschenkt. Meine Familie wurde getrennt verkauft. Ich kann mich an nicht recht viel von ihnen erinnern. Ich denke ich hatte mindestens eine Schwester und Eltern die ich sehr geliebt habe.",
+      "Keine Freunde auf der Akademie da ich als Sklave doch eher ein Außenseiter war… Wobei ich mit der Zeit immer mehr Ansehen erringen konnte, da ich sehr begabt war.",
+      "<br><br>Hat Ihr Held noch eine enge Bindung zu Menschen aus seiner Jugend?",
+      "Neben seinen Eltern und Geschwistern, könnten das auch alte Freunde sein, Kameraden aus der Armee oder von der Akademie, ein Lehrmeister oder ein Gönner – vielleicht sogar eine Jugendliebe, die mittlerweile anderweitig verheiratet ist. Enge Bindungen müssen nicht immer freundschaftliche Bindungen sein; auch Rivalitäten und Feindschaften können noch aus Jugendtagen herrühren.",
+      "<br>Nichts erwähnenswert.",
+      "<br><br>Warum ist Ihr Held zum Abenteuer geworden?",
+      "Hat er seine Heimat verlassen, weil er einfach mal etwas anderes erleben wollte? Oder war es Zufall? Ein schwerer Schicksalsschlag, Krieg oder Armut? Verfolgt ihr Held irgendwelche besonderen Ziele und hängt bestimmten Prinzipien an, oder lebt er in den Tag hinein? Will er einen Glauben oder das Wohl eines bestimmten Adelshauses fördern oder Ruhm und Reichtum anhäufen?",
+      "Keine leichte Kindheit (magische Experimente an Sklaven waren und sind nicht cool!), daher sympathisiere ich nicht unbedingt mit meiner Akademie und in meiner Heimat hält mich auch nichts.",
+      "Wo ist Ihr Held schon gewesen?",
+      "Hatte er vor seiner ersten Abenteuerreise jemals Gelegenheit, seinen Geburtsort zu verlassen? Ist er schon viel herumgekommen, und wenn ja: warum? Und wo war er schon überall?",
+      "<br>Nein.",
+      "<br><br>Ist Ihr Held sehr götterfürchtig?",
+      "Wenn ja: Ist es nur Erziehungssache, oder hatte er vielleicht ein besonderes Erlebnis? (wie das oben erwähnte Wunder) oder ist irgendwann einmal mit knapper Not einer großen Gefahr entronnen? Wenn nein: Warum nicht? Hat ihn das alles noch nie interessiert, oder ist er vom Glauben abgefallen? Weswegen? Ehrt er vielleicht die Götter, aber verachtet die Priesterschaft?",
+      "<br>Hesinde. Mein Motto: Wissen ist Macht. Ich werde nie wieder als Sklave anderen dienen.",
+      "<br><br>Wie steht Ihr Held zur Zauberei?",
+      "Ist es für ihn ein alltägliches Phänomen oder etwas, das er noch nie selbst erlebt hat? Hat er Angst davor, der sieht er sie als Werkzeug an, wie ein Schwert oder einen Bund Dietriche? Glaubt er, dass Zauberei dem Göttervertrauen abträglich oder gar schieres Dämonenwerk ist?",
+      "<br>Ich bin Magierin.",
+      "<br><br>Für wen oder was würde Ihr Held sein Leben riskieren?",
+      "Würde er überhaupt sein Leben aufs Spiel setzen, wenn es sich irgendwie vermeiden lässt? Oder macht dieser Kitzel sein Dasein überhaupt erst interessant? Und was würde er tun, um reich und berühmt zu werden? Oder verzichtet er lieber auf den Ruhm, so lange er nur gut bezahlt wird? Würde der Held für seinen Glauben oder seinen König sterben? Hat er einen Ehrbegriff oder folgt er Prinzipien, die ihn vor eine solche Entscheidung stellen?",
+      "<br>Ich habe doch keine Ahnung wofür ich mein Leben aufs Spiel setzten würde und bin eher der Meinung, dass es immer einen anderen Weg geben muss. Das Leben und die Freiheit über sein Leben sind schließlich die höchsten Güter.",
+      "<br><br>Was ist der größte Wunsch Ihres Helden?",
+      "Was wollte er schon immer einmal sehen, erleben oder erreichen? Welche hehre Ideal verfolgt er, von welchen materiellen Erfolgen träumt er insgeheim? Was wird er tun, wenn sich der Wunsch erfüllt?",
+      "<br>Insgeheim würde ich gerne irgendwann meine Familie suchen, aber im Moment will ich nur weg und meine Fähigkeiten verbessern und meine Möglichkeiten ausloten.",
+      "<br><br>Was fürchtet Ihr Held mehr, als alles andere auf der Welt?",
+      "Welche persönlichen Ängste hegt er, welche Furcht ist tief in der Weltanschauung verwurzelt? Versucht er, den Auslöser zu meiden, oder konfrontiert er den Schrecken, um seine Angst abzubauen?",
+      "<br>Heraus zufinden, dass es meiner Familie schlechter ergangen ist als mir und sie an der Sklaverei zugrunde gegangen sind. Und selbst wieder Sklave werden ist auch nicht so toll.",
+      "<br><br>Wie sieht es mit seiner Moral und seiner Gesetzestreue aus?",
+      "Wenn er die Gelegenheit hätte, einem reichen Händler unbemerkt einen Beutel Münzen abzunehmen, würde er es tun? Wie sieht es aus, wenn der Beutel Münzen der einzige Besitz eines alten Mütterchens ist? Biegt er die Wahrheit ein wenig zurecht, wenn er sich davon einen Vorteil verspricht? Würde er einen Geweihten anlügen? Und was, wenn er dadurch einen Freund vor großem Unglück schützen könnte? Ist er überzeugt, dass die Rechtssprechung von den Richtern und Adligen immer gerecht ist? Würde er einen Dieb, den er erwischt hat, selbst bestrafen oder der Stadtwache übergeben?",
+      "<br>Ich halte nicht viel von Gesetzen die von einigen Wenigen für alle anderen beschlossen wurden. Ähnelt für mich zu sehr der Sklaverei. Aber ich würde schon sagen, dass ich eine recht gerechte Moralvorstellung habe. Jeder Mensch sollte gerecht behandelt werden.",
+      "Mit Geweihten habe ich nicht viel zu tun, aber nur zum Spaß würde ich sie nicht anlügen.",
+      "<br><br>Ist er Fremden gegenüber aufgeschlossen?",
+      "Hat er Vorurteile? Was hält er von Elfen, Zwergen und Menschen anderer Rassen und Kulturen? (Oder, wenn er ein Elf oder Zwerg ist: Was hält er von Menschen?) Wie steht er zu Goblins, Trollen, Orks und Achaz? Hat er in seinem Leben überhaupt schon einmal einen Angehörigen dieser Rassen gesehen? Oder beruht sein Wissen über solche Wesen auf Erzählungen? Wie hält er es mit fremden menschlichen Kulturen? Gibt es für ihn einen „Erbfeind“ (wie es bei Nostriern und Andergastern vorkommt)?",
+      "<br>Ich kenne die meisten Rassen nur aus meinem Studium, daher habe ich noch keine positiven oder negativen Erfahrungen. Bin also ein unbeschriebenes Blatt.",
+      "<br>Welchen Stellenwert hat Leben für Ihn?",
+      "Ist Töten ein Handwerk wie jedes andere, oder versucht er, Leben zu erhalten wo er nur kann? Schätzt er das Leben eines Orks ebenso hoch ein, wie das eines Menschen, Elfen oder Zwergen? Macht er Unterschiede zwischen Verwandten und Freunden auf der einen und Fremden und Feinden auf der anderen Seite?",
+      "<br><br>Leben ist ein sehr hohes Gut, aber im Kampf heißt es töten oder getötet werden, schätze ich. Ich bin ja schließlich frisch von der Akademie und habe es selber noch nicht erlebt.",
+      "<br>Wie steht Ihr Held zu Tieren?",
+      "Sind sie für ihn reine Nahrungsquelle? Oder sieht er in erster Linie, wie gefährlich wilde Tiere für ihn sind? Hat er vielleicht einmal ein Tier besessen (oder besitzt es noch), dem er eine eigene Persönlichkeit zugesteht (z.B. einen Hund, ein Pferd oder eine Katze)?",
+      "<br><br>Ich hasse Tiere. Ich wurde oft schlechter als ein Haustier gehalten, also hasse ich jetzt alle Tiere.",
+      "<br>Hat Ihr Held einen Sinn für Schönheiten?",
+      "Liebt er Musik oder Kunst? Malt er vielleicht selbst oder spielt ein Instrument? Kann er die Schönheit eines Sonnenuntergangs genießen? Oder liebt er die Eleganz eines Duells? Bedeutet ihm die aktuelle Mode etwas?",
+      "<br><br>Nein, das ist sinnlose Zeitverschwendung. Ich nutze meine geringen künstlerischen Fähigkeiten wenn dann sinnvoll.",
+      "<br>Was isst und trinkt er am liebsten?",
+      "Trinkt er lieber Bier, oder bevorzugt er Wein? Oder vielleicht Met oder Ziegenmilch? Ist er der Meinung, dass sich anständige Helden nur von Branntwein ernähren sollten? Und muss es für ihn immer ein Braten sein, oder kann er sich auch mit einem deftigen Gemüseeintopf anfreunden? Braucht er immer sauberes Geschirr und Serviette, oder beißt er auch mal herzhaft in eine fetttriefende Hammelkeule?",
+      "<br><br>Weder Bier noch Wein. Met und Kuhmilch klingt schon besser. Gemüse ist genauso gut wie Schweinsbraten. Besteck ist überbewertet.",
+      "<br>Wie sieht es mit der Liebe aus?",
+      "Ist der Held verführerisch oder enthaltsam? Erfahren oder schüchtern und unbeholfen? Wie reagiert er, wenn ihm eine hübsche Schankmaid oder ein knackiger Knecht auffordernde Blicke zuwirft? Oder ist er vielleicht in festen Händen? Und dann in wessen? Hat er womöglich eine tragische Liebe hinter sich? Oder ist er auf der Suche nach seiner oder seinem Angebeteten?",
+      "<br><br>Ich schiebe das Thema auf, im Moment will ich auf eigenen Beinen stehen können und brauche keinen Partner dem ich verpflichtet bin.",
+      "<br>Gibt es ein dunkles Geheimnis aus seiner Vergangenheit?",
+      "Hat sich ihr Held vielleicht irgendwann einmal etwas zu Schulden kommen lassen, wovon er nur ungern spricht? Hat er sich einem persönlichen Widersacher geschaffen, gibt es irgendetwas, womit man ihn erpressen kann?",
+      "<br><br>Nein.",
+      "<br>Welche Charakterzüge bestimmen Ihn?",
+      "Ist er beherrscht oder jähzornig? Launisch oder ruhig? Eher Verbittert oder lebenslustig? Stolz oder bescheiden? Nachdenklich oder spontan? Ernsthaft oder schelmisch? Neugierig oder konservativ? Selbstbewusst oder selbstkritisch? Sanftmütig oder gnadenlos? Nachsichtig oder rachsüchtig? Misstrauisch oder vertrauensselig? Ist er fleißig, oder genießt er in seinem Leben lieber angenehmere Dinge als die Arbeit?"
+      ],
+    "permissions": [
+      "laila",
+      "meisterF"
+    ]
+  },
+  "pdf": {
+    "value": "lSShabob.pdf",
+    "permissions": [
+      "laila",
+      "meisterF"
+    ]
+  },
+  "permissions": [
+    "spieler"
+  ]
+}

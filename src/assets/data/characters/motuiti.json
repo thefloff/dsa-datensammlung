@@ -1,0 +1,38 @@
+{
+  "name": {
+    "value": "Motu-Iti"
+  },
+  "description": {
+    "value": [
+      "* Zunge herausgeschnitten",
+      "* eher klein, aber sehr muskulös",
+      "* Glatze",
+      "* dunkle Hautfarbe"
+    ]
+  },
+  "notes": {
+    "value": [
+      "Koch an Bord der <moewe>"
+    ]
+  },
+  "backstory": {
+    "value": [
+      "Motu-Iti wurde bereits als Kind von Sklavenhändlern gefangen genommen, die ihm sehr bald seine Zunge",
+      "herausschnitten weil er nicht aufhörte zu singen. Als er an Bord eines Sklavenschiffes transportiert wurde, wurde dieses von Piraten angegriffen. Der Kapitän des",
+      "Piratenschiffs, <aFinn>, nahm ihn auf und adoptierte",
+      "ihn. Seitdem weicht Motu-Iti ihm nicht von der Seite und arbeitet als Koch auf der <moewe>."
+    ],
+    "permissions": [
+      "meisterF"
+    ]
+  },
+  "pdf": {
+    "value": "motuiti.pdf",
+    "permissions": [
+      "meisterF"
+    ]
+  },
+  "permissions": [
+    "spieler"
+  ]
+}

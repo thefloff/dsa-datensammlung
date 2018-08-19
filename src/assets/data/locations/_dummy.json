@@ -1,0 +1,47 @@
+{
+  "name": {
+    "value": ""
+  },
+  "notes": {
+    "value": [
+      "note1",
+      "note2"
+    ]
+  },
+  "taverns": {
+    "value": [
+      {
+        "name": "tavern1",
+        "notes": [
+          "note1",
+          "note2"
+        ],
+        "permissions": []
+      },
+      {
+        "name": "tavern2",
+        "notes": [],
+        "permissions": []
+      }
+    ]
+  },
+  "shops": {
+    "value": [
+      {"name": "shop1"},
+      {"name": "shop2"},
+    ]
+  },
+  "temples": {
+    "value": [
+      {"name": "temple1"},
+      {"name": "temple2"}
+    ]
+  },
+  "others": {
+    "value": [
+      {"name": "other1"},
+      {"name": "other2"}}
+    ]
+  },
+  "permissions": []
+}

@@ -1,0 +1,103 @@
+<div class="container-fluid w-100" *ngIf="location">
+  <h4>{{location.name}}</h4>
+
+  <div class="row">
+
+    <div class="col-12 col-xl-6 order-2 order-xl-1">
+
+      <div *ngIf="location.taverns && location.taverns.length > 0">
+        <h6 class="mt-3">Gashäuser:</h6>
+        <div class="list-group list-group-sm">
+
+          <div *ngFor="let tavern of location.taverns; let idx = index;">
+            <div class="list-group-item list-group-item-action" (click)="openElement = idx">{{tavern[0]}}</div>
+            <div class="" *ngIf="idx === openElement && tavern[1].length > 0">
+              <div class="card card-body">
+                <ul>
+                  <li *ngFor="let note of tavern[1]"><span Markdown [data]=note></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div *ngIf="location.shops && location.shops.length > 0">
+        <h6 class="mt-3">Händler:</h6>
+        <div class="list-group list-group-sm">
+
+          <div *ngFor="let shop of location.shops; let idx = index;">
+            <div class="list-group-item list-group-item-action" (click)="openElement = idx + location.taverns.length">{{shop[0]}}</div>
+            <div class="" *ngIf="idx + location.taverns.length === openElement && shop[1].length > 0">
+              <div class="card card-body">
+                <ul>
+                  <li *ngFor="let note of shop[1]"><span Markdown [data]=note></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div *ngIf="location.temples && location.temples.length > 0">
+        <h6 class="mt-3">Temple:</h6>
+        <div class="list-group list-group-sm">
+
+          <div *ngFor="let temple of location.temples; let idx = index;">
+            <div class="list-group-item list-group-item-action" (click)="openElement = idx + location.taverns.length +
+            location.shops.length">{{temple[0]}}</div>
+            <div class="" *ngIf="idx + location.taverns.length +
+            location.shops.length === openElement && temple[1].length > 0">
+              <div class="card card-body">
+                <ul>
+                  <li *ngFor="let note of temple[1]"><span Markdown [data]=note></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div *ngIf="location.others && location.others.length > 0">
+        <h6 class="mt-3">Sonstige:</h6>
+        <div class="list-group list-group-sm">
+
+          <div *ngFor="let other of location.others; let idx = index;">
+            <div class="list-group-item list-group-item-action" (click)="openElement = idx + location.taverns.length +
+            location.shops.length + location.temples.length">{{other[0]}}</div>
+            <div class="" *ngIf="idx + location.taverns.length +
+            location.shops.length + location.temples.length === openElement && other[1].length > 0">
+              <div class="card card-body">
+                <ul>
+                  <li *ngFor="let note of other[1]"><span Markdown [data]=note></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-12 col-xl-6 order-1 order-xl-2">
+      <div *ngIf="location.notes">
+        <h5>Beschreibung</h5>
+        <ul>
+          <li *ngFor="let note of location.notes">
+            <span Markdown [data]=note></span>
+          </li>
+        </ul>
+      </div>
+
+      <h5>Notitzen</h5>
+      <dsa-comment-box [dataType]="DataType.LOCATION" [dataId]="location.id"></dsa-comment-box>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,23 @@
+<div class="row bg-dsa-dark mx-0" style="height: 5em">
+  <div class="col-8 pl-0">
+    <h2 class="dsa-headline">DSA - Datensammlung</h2>
+  </div>
+  <div class="col-4 pr-0">
+    <div *ngIf="!user" class="right-box">
+      <button type="button" class="btn btn-sm btn-dsa-normal float-right" (click)="openRegisterForm()">
+        Registrieren
+      </button>
+      <button type="button" class="btn btn-sm btn-dsa-normal float-right" (click)="openLoginForm()">
+        Login
+      </button>
+    </div>
+    <div *ngIf="user" class="right-box">
+      <button type="button" class="btn btn-sm btn-dsa-normal float-right" (click)="userService.signout()">
+        Ausloggen
+      </button>
+      <span class="mr-1 float-right">
+      {{user.displayName}}
+      </span>
+    </div>
+  </div>
+</div>

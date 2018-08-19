@@ -1,0 +1,32 @@
+{
+  "name": {
+    "value": "Dragan Sassafras"
+  },
+  "description": {
+    "value": [
+      "* roter Ledermantel und Lederhut",
+      "* Brabaci"
+    ]
+  },
+  "notes": {
+    "value": [
+      "Piratenkapitän der <desideria>"
+    ]
+  },
+  "backstory": {
+    "value": [
+      "Dragan Sassafras startete seine Piratenlaufbahn an Bord des selben Schiffes wie <aFinn>,",
+      "der <MDW>. Als es ihnen gelang eine Karavelle zu kapern, bei dem",
+      "Versuch aber leider ihr Kapitän zu Tode kam, übernahm Dragan",
+      "das Kommando über sie und nannte sie <desideria>. <aFinn>",
+      "wurde Kapitän des <MDW>.",
+      "Dragan hat eine Frau und Kinder zuhause zu denen er immer wieder heimkehrt."
+    ],
+    "permissions": [
+      "meisterF"
+    ]
+  },
+  "permissions": [
+    "spieler"
+  ]
+}

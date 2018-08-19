@@ -1,0 +1,10 @@
+{
+  "name": {
+    "value": "02 - UNTITLED"
+  },
+  "planning": {
+    "value": [],
+    "permissions": ["meisterF"]
+  },
+  "permissions": ["meisterF"]
+}

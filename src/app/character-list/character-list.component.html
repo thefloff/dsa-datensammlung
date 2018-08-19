@@ -1,0 +1,21 @@
+<div class="container-fluid w-100">
+  <h4>Liste der Personen:</h4>
+  <div [hidden]="!canSeePlayerCharacters">
+    <h6 class="mt-3">Spieler:</h6>
+    <div class="list-group list-group-sm">
+      <dsa-dsa-link *ngFor="let char of playerCharacters" [type]="DataType.CHARACTER" [data_id]=char [list]="true"></dsa-dsa-link>
+    </div>
+  </div>
+  <div [hidden]="!canSeeMainCharacters">
+    <h6 class="mt-3">Hauptpersonen:</h6>
+    <div class="list-group list-group-sm">
+      <dsa-dsa-link *ngFor="let char of mainCharacters" [type]="DataType.CHARACTER" [data_id]=char [list]="true"></dsa-dsa-link>
+    </div>
+  </div>
+  <div [hidden]="!canSeeSideCharacters">
+    <h6 class="mt-3">Nebenpersonen:</h6>
+    <div class="list-group list-group-sm">
+      <dsa-dsa-link *ngFor="let char of sideCharacters" [type]="DataType.CHARACTER" [data_id]=char [list]="true"></dsa-dsa-link>
+    </div>
+  </div>
+</div>

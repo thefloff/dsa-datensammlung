@@ -1,0 +1,43 @@
+{
+  "name": {
+    "value": "Irion Treublatt"
+  },
+  "notes": {
+    "value": [
+      "Belmart",
+      "Blutblatt (3 Zweige am Kopf?)",
+      "Carlog",
+      "Starker Gulmond",
+      "Hollbeere",
+      "Klippenzahn",
+      "Lunanie",
+      "Mibelrohr",
+      "Rote Pfeilblüte (Punsch)"
+    ],
+    "permissions": [
+      "irion",
+      "meisterF"
+    ]
+  },
+  "backstory": {
+    "value": [
+      "Irion Treublatt wurde in Havena geboren. Seine Mutter Alena förderte Irions kreative Ader schon früh und brachte ihm das Malen bei. Sein Vater Alrik verdiente sein Geld als Händler, doch Irion zeigte kein Interesse an diesem Geschäft. Im Alter von 8 Jahren wurde Irion von einem gewissen Olein Alfaran am Markt angesprochen. Er sah großes Talent in dem Jungen und wollte ihn bei sich in die Ausbildung nehmen. Irion war sehr interessiert und bat seine Eltern um Erlaubnis. Seine Mutter unterstütze das Vorhaben, doch sein Vater war dagegen. Daraufhin zerstritten sich Irions Eltern und sein Vater verließ die Familie. Dann wurde Irion in Altenfaehr zum Druiden ausgebildet. Olein wurde für ihn wie ein Vater, zu seinem leiblichen Vater brach der Kontakt jedoch völlig ab.<br>",
+      "Olein war weit gereist und konnte Irion viel beibringen. In den Wäldern um Altenfaehr herum entdeckte Irion seine Liebe zur Natur und kombinierte häufig seine Hobbies, indem er Tiere und Landschaften malte. Während der Ausbildung nutzte Irion jede Gelegenheit, seine Mutter in Havena zu besuchen.<br>",
+      "Nach Abschluss seiner Ausbildung wollte Irion jedoch noch mehr lernen und entdecken, so machte er sich auf den Weg, um wie sein Mentor zu reisen. Zuerst machte er sich jedoch wieder nach Havena auf, um sich von seiner Mutter zu verabschieden. Er hielt sich dort länger als geplant auf, denn seine Mutter schenkte ihm als Abschiedsgeschenk Tätowierwerkzeug, weil sie wusste, dass ihn dieses Handwerk schon lange fasziniert hatte. So erlernte er dieses Handwerk noch in Havena, bevor er in den Süden aufbrach, um zu reisen."
+    ],
+    "permissions": [
+      "irion",
+      "meisterF"
+    ]
+  },
+  "pdf": {
+    "value": "iTreublatt.pdf",
+    "permissions": [
+      "irion",
+      "meisterF"
+    ]
+  },
+  "permissions": [
+    "spieler"
+  ]
+}
