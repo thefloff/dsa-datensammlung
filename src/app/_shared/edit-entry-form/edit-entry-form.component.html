@@ -1,0 +1,42 @@
+
+<div class="bg-dsa-dark">
+  <div class="modal-header">
+    <h5 class="modal-title">Berechtigungen</h5>
+  </div>
+  <div>
+    <div class="modal-body">
+      <div class="p-1 d-flex flex-column">
+        <div class="form-group row mr-2">
+          <label class="col-form-label-sm col-3" for="name_input">Name</label>
+          <div class="col-9">
+            <input type="text" class="form-control-sm bg-dsa-normal" id="name_input" placeholder="Name"
+                   [(ngModel)]="name">
+            <small class="form-text text-muted">Der Name des Eintrags</small>
+          </div>
+        </div>
+        <div class="form-group row mr-2">
+          <label class="col-form-label-sm col-3" for="id_input">ID</label>
+          <div class="col-9">
+            <input type="text" class="form-control-sm col-9 bg-dsa-normal" id="id_input" placeholder="ID"
+                   [(ngModel)]="id">
+            <small class="form-text text-muted">Der ID des Eintrags zum Verlinken.
+              Muss einzigartig sein (wird NICHT überprüft!).</small>
+          </div>
+        </div>
+        <div class="form-group row mr-2">
+          <label class="col-form-label-sm col-3" for="category_input">Category</label>
+          <div class="col-9">
+            <input type="text" class="form-control-sm col-9 bg-dsa-normal" id="category_input" placeholder="Category"
+                 [(ngModel)]="category">
+            <small class="form-text text-muted">Die Kategorie des Eintrags zur Einordnung in der Liste.
+              Leer lassen um nicht anzuzeigen.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-dsa-normal" (click)="activeModal.dismiss('Abbrechen clicked')">Abbrechen</button>
+      <button type="submit" class="btn btn-dsa-normal" (click)="save()">Speichern</button>
+    </div>
+  </div>
+</div>

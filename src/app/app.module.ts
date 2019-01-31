@@ -26,6 +26,10 @@ import { LocationComponent } from './location/location.component';
 import { AdventureComponent } from './adventure/adventure.component';
 import { InputBoxComponent } from './_shared/input-box/input-box.component';
 import { ShipMovementViewComponent } from './_shared/ship-movement-view/ship-movement-view.component';
+import { GroupComponent } from './group/group.component';
+import { GroupsListComponent } from './groups-list/groups-list.component';
+import { PermissionsFormComponent } from './_shared/permissions-form/permissions-form.component';
+import { EditEntryFormComponent } from './_shared/edit-entry-form/edit-entry-form.component';
 
 const appRoutes: Routes = [
   { path: 'characters', component: CharacterListComponent },
@@ -37,6 +41,8 @@ const appRoutes: Routes = [
   { path: 'locations', component: LocationsListComponent },
   { path: 'locations/:id', component: LocationComponent },
   { path: 'start', component: StartComponent },
+  { path: 'groups', component: GroupsListComponent },
+  { path: 'groups/:id', component: GroupComponent },
   { path: '', component: StartComponent },
   { path: '**', component: StartComponent }
 ];
@@ -59,7 +65,11 @@ const appRoutes: Routes = [
     LocationComponent,
     AdventureComponent,
     InputBoxComponent,
-    ShipMovementViewComponent
+    ShipMovementViewComponent,
+    GroupComponent,
+    GroupsListComponent,
+    PermissionsFormComponent,
+    EditEntryFormComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +87,9 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent],
   entryComponents: [
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    PermissionsFormComponent,
+    EditEntryFormComponent,
   ]
 })
 export class AppModule { }

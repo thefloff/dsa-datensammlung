@@ -32,6 +32,7 @@
     "ngx-bootstrap": "^3.0.1",
     "ngx-md": "^6.0.0",
     "rxjs": "^6.0.0",
+    "yarn": "^1.13.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import {Observable, Subject} from 'rxjs';
-import {s} from '@angular/core/src/render3';
 import {DataType} from './dsa-link/dsa-link.component';
 
 @Injectable({
@@ -9,6 +8,7 @@ import {DataType} from './dsa-link/dsa-link.component';
 })
 export class DatabaseService {
   private db;
+  private topRole: string;
 
   constructor() {
     this.db = firebase.firestore();
@@ -55,6 +55,31 @@ export class DatabaseService {
     });
 
     return result;
+  }
+
+  public getOwners(type: DataType, id: string): Observable<string[]> {
+    const result = new Subject<string[]>();
+    const docRef = this.db.collection(this.lookupCollection(type)).doc(id);
+
+    docRef.get().then(doc => {
+      if (doc.exists) {
+        result.next(doc.data()['owners']);
+        result.complete();
+      } else {
+        result.next([]);
+        result.complete();
+      }
+    }).catch(function (error) {
+      console.log('Error getting data:', error);
+    });
+    return result;
+  }
+
+  public setOwners(type: DataType, id: string, newOwners: string[]) {
+    const docRef = this.db.collection(this.lookupCollection(type)).doc(id);
+    const update = {};
+    update['owners'] = newOwners;
+    docRef.update(update);
   }
 
   public getPdfPermissions(type: DataType, id: string): Observable<string[]> {
@@ -104,6 +129,12 @@ export class DatabaseService {
     docRef.update(update);
   }
 
+  public createNewEntry(type: DataType, id: string, data: object) {
+    data['owners'] = [this.topRole];
+    data['permissions'] = [this.topRole];
+    this.db.collection(this.lookupCollection(type)).doc(id).set(data, {merge: true});
+  }
+
   public getUserRoles(email: string):
     Observable<string[]> {
     const result = new Subject<string[]>();
@@ -111,6 +142,7 @@ export class DatabaseService {
     const docRef = this.db.collection('users').doc(email);
     docRef.get().then(doc => {
       if (doc.exists) {
+        this.topRole = doc.data()['roles'][doc.data()['roles'].length - 1];
         result.next(
           doc.data()['roles']
         );
@@ -135,6 +167,8 @@ export class DatabaseService {
         return 'adventures';
       case DataType.LOCATION:
         return 'locations';
+      case DataType.GROUP:
+        return 'groups';
     }
   }
 

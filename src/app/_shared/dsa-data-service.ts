@@ -14,10 +14,15 @@ export class DsaDataService {
   private shipEntries: Map<string, {name: string, category: string}>;
   private locationEntries: Map<string, {name: string, category: string}>;
   private adventureEntries: Map<string, {name: string, category: string}>;
+  private groupEntries: Map<string, {name: string, category: string}>;
 
   constructor(private http: HttpClient,
               private userService: UserService,
               private dataBase: DatabaseService) {
+    this.updateEntries();
+  }
+
+  public updateEntries() {
     this.dataBase.getDataMap(DataType.CHARACTER).subscribe((map) => {
       this.characterEntries = map;
     });
@@ -29,6 +34,9 @@ export class DsaDataService {
     });
     this.dataBase.getDataMap(DataType.LOCATION).subscribe((map) => {
       this.locationEntries = map;
+    });
+    this.dataBase.getDataMap(DataType.GROUP).subscribe((map) => {
+      this.groupEntries = map;
     });
   }
 
@@ -116,6 +124,27 @@ export class DsaDataService {
     });
   }
 
+  public getGroupsByCategory(): Observable<Map<string, string[]>> {
+    return Observable.create(observer => {
+      let groupsCategory = new Map<string, string[]>();
+      this.groupEntries.forEach((data, id) => {
+        if (data['category']) {
+          let current = groupsCategory.get(data['category']);
+          if (!current) {
+            current = [];
+          }
+          current.push(id);
+          groupsCategory.set(data['category'], current);
+        }
+      });
+
+      groupsCategory = this.removeUnnecessaryCategories(DataType.GROUP, groupsCategory);
+
+      observer.next(groupsCategory);
+      observer.complete();
+    });
+  }
+
   removeUnnecessaryCategories(type: DataType, fullCategoriesMap): Map<string, string[]> {
     const categoriesMap = new Map<string, string[]>();
     fullCategoriesMap.forEach((ids, category) => {
@@ -157,6 +186,11 @@ export class DsaDataService {
         foundName = data['name'];
       }
     });
+    this.groupEntries.forEach((data, id) => {
+      if (id === searchId) {
+        foundName = data['name'];
+      }
+    });
     return foundName;
   }
 
@@ -188,6 +222,15 @@ export class DsaDataService {
     });
   }
 
+  public isOwner(type: DataType, id: string) {
+    return Observable.create(observer => {
+      this.dataBase.getOwners(type, id).subscribe(response => {
+        observer.next(this.userService.hasPermission(response));
+        observer.complete();
+      });
+    });
+  }
+
   public maySeePdf(type: DataType, id: string): Observable<boolean> {
     return Observable.create(observer => {
       this.dataBase.getPdfPermissions(DataType.CHARACTER, id).subscribe((response) => {
@@ -202,8 +245,8 @@ export class DsaDataService {
     const result = new Subject<{'plain': string, 'linked': string, 'may_write': boolean, 'may_read': boolean}>();
 
     this.dataBase.getData(type, id, field).subscribe((data) => {
-      const may_read = this.userService.hasPermission(data.read_permissions);
-      const may_write = this.userService.hasPermission(data.write_permissions);
+      const may_read = this.userService.hasPermission(data.read_permissions) || field === 'permissions';
+      const may_write = this.userService.hasPermission(data.write_permissions) || field === 'permissions';
       result.next({
         'plain': may_read ? data.data : null,
         'linked': may_read ? this.insertLinks(data.data) : null,
@@ -218,6 +261,65 @@ export class DsaDataService {
 
   public storeData(type: DataType, id: string, field: string, data: any) {
     this.dataBase.storeData(type, id, field, data);
+  }
+
+  public getReadPermissions(type: DataType, id: string, field: string):
+    Observable<string[]> {
+    const result = new Subject<string[]>();
+    if (field === null) {
+      this.dataBase.getPermissions(type, id).subscribe(data => {
+        result.next(data);
+        result.complete();
+      });
+    } else {
+      this.dataBase.getData(type, id, field).subscribe(data => {
+        result.next(data.read_permissions);
+        result.complete();
+      });
+    }
+    return result;
+  }
+
+  public getWritePermissions(type: DataType, id: string, field: string):
+    Observable<string[]> {
+    const result = new Subject<string[]>();
+    this.dataBase.getData(type, id, field).subscribe(data => {
+      result.next(data.write_permissions);
+      result.complete();
+    });
+    return result;
+  }
+
+  public getOwners(type: DataType, id: string, field: string):
+    Observable<string[]> {
+    const result = new Subject<string[]>();
+    this.dataBase.getOwners(type, id).subscribe(data => {
+      result.next(data);
+      result.complete();
+    });
+    return result;
+  }
+
+  public setReadPermissions(type: DataType, id: string, field: string, permissions: string[]) {
+    if (field == null) {
+      this.dataBase.storeData(type, id, 'permissions', permissions);
+    } else {
+      this.dataBase.storeData(type, id, field + '_read', permissions);
+    }
+  }
+
+  public setWritePermissions(type: DataType, id: string, field: string, permissions: string[]) {
+    if (field !== null) {
+      this.dataBase.storeData(type, id, field + '_write', permissions);
+    }
+  }
+
+  public setOwners(type: DataType, id: string, newOwners: string[]) {
+    this.dataBase.setOwners(type, id, newOwners);
+  }
+
+  public createNewEntry(type: DataType, id: string, data: object) {
+    this.dataBase.createNewEntry(type, id, data);
   }
 
   public insertLinks(text) {
@@ -254,6 +356,13 @@ export class DsaDataService {
         let idx = text.indexOf('<' + id + '>');
         while (idx !== -1) {
           text = text.replace('<' + id + '>', '<a href="/adventures/' + id + '">' + data['name'] + '</a>');
+          idx = text.indexOf('<' + id + '>');
+        }
+      });
+      this.groupEntries.forEach((data, id) => {
+        let idx = text.indexOf('<' + id + '>');
+        while (idx !== -1) {
+          text = text.replace('<' + id + '>', '<a href="/groups/' + id + '">' + data['name'] + '</a>');
           idx = text.indexOf('<' + id + '>');
         }
       });

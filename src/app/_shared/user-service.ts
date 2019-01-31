@@ -99,13 +99,6 @@ export class UserService {
     return necessary.length > 0;
   }
 
-  public canGet(jsonData: JSON, field: string): boolean {
-    if (!jsonData[field]) {
-      return false;
-    }
-    return (!jsonData[field]['permissions'] || this.hasPermission(jsonData[field]['permissions']));
-  }
-
   private getUserRoles(email: string) {
     if (!email) {
       this.userRoles = [];

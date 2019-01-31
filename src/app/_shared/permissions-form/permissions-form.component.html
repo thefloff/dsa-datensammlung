@@ -1,0 +1,85 @@
+<div class="bg-dsa-dark">
+  <div class="modal-header">
+    <h5 class="modal-title">Berechtigungen</h5>
+  </div>
+  <div>
+    <div class="modal-body">
+      <div class="row" id="label_row">
+        <div class="col-3"></div>
+        <div class="col-3 mx-auto">Lesen</div>
+        <div class="col-3 mx-auto">Schreiben</div>
+        <div class="col-3 mx-auto">Besitzer</div>
+      </div>
+      <div class="row" id="meisterU_row">
+        <label class="col-form-label-sm col-3" for="meisterU_row">Meister U</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_meisterU">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_meisterU" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_meisterU" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="meisterF_row">
+        <label class="col-form-label-sm col-3" for="meisterF_row">Meister Flo</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_meisterF">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_meisterF" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_meisterF" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="bo_row">
+        <label class="col-form-label-sm col-3" for="bo_row">Bo</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_bo">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_bo" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_bo" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="irion_row">
+        <label class="col-form-label-sm col-3" for="irion_row">Irion</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_irion">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_irion" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_irion" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="laila_row">
+        <label class="col-form-label-sm col-3" for="laila_row">Laila</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_laila">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_laila" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_laila" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="lynn_row">
+        <label class="col-form-label-sm col-3" for="lynn_row">Lynn</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_lynn">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_lynn" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_lynn" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="ramox_row">
+        <label class="col-form-label-sm col-3" for="ramox_row">Ramox</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_ramox">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_ramox" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_ramox" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="rufus_row">
+        <label class="col-form-label-sm col-3" for="rufus_row">Rufus</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_rufus">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_rufus" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_rufus" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="salandrion_row">
+        <label class="col-form-label-sm col-3" for="salandrion_row">Salandrion</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_salandrion">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_salandrion" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_salandrion" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="tsael_row">
+        <label class="col-form-label-sm col-3" for="tsael_row">Tsael</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_tsael">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_tsael" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_tsael" disabled="{{field !== null}}">
+      </div>
+      <div class="row" id="spieler_row">
+        <label class="col-form-label-sm col-3" for="meisterF_row">Spieler</label>
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_read_spieler">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="may_write_spieler" disabled="{{field === null}}">
+        <input type="checkbox" class="col-3 my-auto" [(ngModel)]="owner_spieler" disabled="{{field !== null}}">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-dsa-normal" (click)="activeModal.dismiss('Abbrechen clicked')">Abbrechen</button>
+      <button type="submit" class="btn btn-dsa-normal" (click)="save()">Speichern</button>
+    </div>
+  </div>
+</div>

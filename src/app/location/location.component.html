@@ -1,4 +1,8 @@
 <div class="container-fluid" *ngIf="visible">
+
+  <i *ngIf="isOwner" class="fas fa-user-lock btn btn-sm btn-dsa-normal float-right" (click)="openPermissionsForm()"></i>
+
+
   <h4>{{name}}</h4>
 
   <div class="row">
@@ -10,7 +14,7 @@
 
           <div *ngFor="let key of Object.keys(taverns);" class="border-dsa-dark-thin">
             <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && taverns[key].length > 0">
+            <div *ngIf="key === openElement && taverns[key] && taverns[key].length > 0">
                 <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
                   <li *ngFor="let note of taverns[key]" Markdown [data]=note
                       class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
@@ -28,7 +32,7 @@
 
           <div *ngFor="let key of Object.keys(shops);" class="border-dsa-dark-thin">
             <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && shops[key].length > 0">
+            <div *ngIf="key === openElement && shops[key] && shops[key].length > 0">
               <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
                 <li *ngFor="let note of shops[key]" Markdown [data]=note
                     class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
@@ -48,7 +52,7 @@
 
           <div *ngFor="let key of Object.keys(temples);" class="border-dsa-dark-thin">
             <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && temples[key].length > 0">
+            <div *ngIf="key === openElement && temples[key] && temples[key].length > 0">
               <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
                 <li *ngFor="let note of temples[key]" Markdown [data]=note
                     class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
@@ -66,7 +70,7 @@
 
           <div *ngFor="let key of Object.keys(others);" class="border-dsa-dark-thin">
             <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && others[key].length > 0">
+            <div *ngIf="key === openElement && others[key] && others[key].length > 0">
               <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
                 <li *ngFor="let note of others[key]" Markdown [data]=note
                     class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">

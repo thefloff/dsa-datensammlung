@@ -1,1 +1,3 @@
-<a *ngIf="visible" [href]="route_path" [class]="list ? 'list-group-item list-group-item-action' : ''">{{text}}</a>
+<a *ngIf="visible" [href]="route_path" [class]="list ? 'list-group-item list-group-item-action' : ''">
+  {{prefix}} {{text}} {{suffix}}
+</a>

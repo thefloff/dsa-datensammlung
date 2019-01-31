@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DataType } from '../dsa-link/dsa-link.component';
 import { DsaDataService } from '../dsa-data-service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {PermissionsFormComponent} from '../permissions-form/permissions-form.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'dsa-input-box',
@@ -24,15 +26,20 @@ export class InputBoxComponent implements OnInit {
   };
   may_write = false;
   may_read = false;
+  isOwner = false;
 
   inputGroup: FormGroup;
 
-  constructor(private dataService: DsaDataService) { }
+  constructor(private dataService: DsaDataService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     this.loadData();
     this.inputGroup = new FormGroup({
       commentInput: new FormControl()
+    });
+    this.dataService.isOwner(this.dataType, this.dataId).subscribe(result => {
+      this.isOwner = result;
     });
   }
 
@@ -63,6 +70,13 @@ export class InputBoxComponent implements OnInit {
     this.editing = false;
     this.loadData();
     this.inputGroup.controls['commentInput'].setValue(this.data.plain);
+  }
+
+  openPermissionsForm() {
+    const modalRef = this.modalService.open(PermissionsFormComponent);
+    (<PermissionsFormComponent>modalRef.componentInstance).dataType = this.dataType;
+    (<PermissionsFormComponent>modalRef.componentInstance).id = this.dataId;
+    (<PermissionsFormComponent>modalRef.componentInstance).field = this.dataField;
   }
 
 }

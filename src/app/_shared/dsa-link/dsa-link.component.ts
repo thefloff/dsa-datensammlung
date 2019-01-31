@@ -6,7 +6,8 @@ export enum DataType {
   CHARACTER,
   SHIP,
   LOCATION,
-  ADVENTURE
+  ADVENTURE,
+  GROUP,
 }
 
 @Component({
@@ -18,6 +19,8 @@ export class DsaLinkComponent implements OnInit {
   @Input() data_id: string;
   @Input() type: DataType;
   @Input() list: boolean;
+  @Input() prefix: string = null;
+  @Input() suffix: string = null;
   visible = false;
   text: string;
   route_path: string;
@@ -59,6 +62,13 @@ export class DsaLinkComponent implements OnInit {
         this.dataService.maySeeData(DataType.SHIP, this.data_id).subscribe((response) => {
           this.visible = response;
           this.route_path = 'ships/' + this.data_id;
+          this.text = response ? this.dataService.getName(this.data_id) : 'not visible';
+        });
+        break;
+      case DataType.GROUP:
+        this.dataService.maySeeData(DataType.GROUP, this.data_id).subscribe((response) => {
+          this.visible = response;
+          this.route_path = 'groups/' + this.data_id;
           this.text = response ? this.dataService.getName(this.data_id) : 'not visible';
         });
         break;

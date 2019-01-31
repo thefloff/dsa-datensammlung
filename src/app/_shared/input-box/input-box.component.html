@@ -1,18 +1,19 @@
-<div *ngIf="may_read" class="w-100">
+<div *ngIf="may_read || isOwner" class="w-100">
   <h5 *ngIf="dataName">{{dataName}}</h5>
 
   <div *ngIf="!editing" class="d-inline-flex flex-column">
     <div Markdown [data]="data.linked"></div>
     <div>
-      <div *ngIf="may_write" class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="startEdit()">Bearbeiten</div>
+      <div *ngIf="may_write || isOwner" class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="startEdit()">Bearbeiten</div>
     </div>
   </div>
   <div *ngIf="editing" class="d-inline-flex flex-column w-100 h-100" [formGroup]="inputGroup">
     <textarea [id]="dataName + dataId + dataField" class="w-100 border-dsa-dark" style="min-height: 10em" [formControlName]="'commentInput'">{{data}}</textarea>
-    <div class="d-flex">
+    <div>
       <div class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="commit()">Speichern</div>
       <div class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="abbort()">Abbrechen</div>
       <a class="btn btn-sm btn-link btn-dsa-link m-1 ml-0" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>
+      <i *ngIf="isOwner" class="fas fa-user-lock btn btn-sm btn-dsa-normal m-1 ml-0 float-right" style="line-height: inherit" (click)="openPermissionsForm()"></i>
     </div>
   </div>
 
