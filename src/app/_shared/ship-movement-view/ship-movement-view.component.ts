@@ -6,11 +6,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./ship-movement-view.component.css']
 })
 export class ShipMovementViewComponent implements OnInit {
-  @Input() speed_front = 0;
-  @Input() speed_back = 0;
-  @Input() speed_left = 0;
-  @Input() speed_right = 0;
-  @Input() maneuver = 3;
+  @Input() speed: {
+    front: number,
+    back: number,
+    left: number,
+    right: number,
+    mobility: number,
+  };
 
   constructor() { }
 

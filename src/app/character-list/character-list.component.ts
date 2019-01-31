@@ -11,50 +11,17 @@ import { UserService } from '../_shared/user-service';
 export class CharacterListComponent implements OnInit {
   DataType = DataType;
 
-  playerCharacters = ['ramox', 'salandrion', 'laila', 'irion', 'bo', 'lynn'];
-  mainCharacters = ['aFinn', 'motuiti'];
-  sideCharacters = ['dSassafras', 'thor', 'eKnitzing', 'gilgamosh'];
-
-  canSeePlayerCharacters = false;
-  canSeeMainCharacters = false;
-  canSeeSideCharacters = false;
+  categoriesMap: Map<string, string[]>;
 
   constructor(private dataService: DsaDataService,
               private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(() => {
-      this.updateVisibleCategories();
-    })
-  }
-
-  updateVisibleCategories() {
-    this.canSeePlayerCharacters = false;
-    for (const item of this.playerCharacters) {
-      this.dataService.getCharacter(item).subscribe((response) => {
-        if (response) {
-          this.canSeePlayerCharacters = true;
-        }
+    this.userService.onUserChange().subscribe(() => {
+      this.dataService.getCharactersByCategory().subscribe(data => {
+        this.categoriesMap = data;
       });
-    }
-
-    this.canSeeMainCharacters = false;
-    for (const item of this.mainCharacters) {
-      this.dataService.getCharacter(item).subscribe((response) => {
-        if (response) {
-          this.canSeeMainCharacters = true;
-        }
-      });
-    }
-
-    this.canSeeSideCharacters = false;
-    for (const item of this.sideCharacters) {
-      this.dataService.getCharacter(item).subscribe((response) => {
-        if (response) {
-          this.canSeeSideCharacters = true;
-        }
-      });
-    }
+    });
   }
 
 }

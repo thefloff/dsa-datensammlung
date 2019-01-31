@@ -4,16 +4,26 @@ import { DsaDataService } from '../dsa-data-service';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'dsa-comment-box',
+  selector: 'dsa-input-box',
   templateUrl: './input-box.component.html',
   styleUrls: ['./input-box.component.css']
 })
 export class InputBoxComponent implements OnInit {
+  @Input() dataName: string;
   @Input() dataType: DataType;
   @Input() dataId: string;
+  @Input() dataField: string;
 
   editing = false;
-  data: {'plain': string, 'linked': string} = {'plain': '', 'linked': ''};
+  data: {
+    'plain': string,
+    'linked': string
+  } = {
+    'plain': '',
+    'linked': ''
+  };
+  may_write = false;
+  may_read = false;
 
   inputGroup: FormGroup;
 
@@ -27,30 +37,14 @@ export class InputBoxComponent implements OnInit {
   }
 
   loadData() {
-    switch (this.dataType) {
-      case DataType.CHARACTER:
-        this.dataService.getCharacterNotes(this.dataId).subscribe((data) => {
-          this.data = data;
-        });
-        break;
-      case DataType.SHIP:
-        this.dataService.getShipNotes(this.dataId).subscribe((data) => {
-          this.data = data;
-        });
-        break;
-      case DataType.LOCATION:
-        this.dataService.getLocationNotes(this.dataId).subscribe((data) => {
-          this.data = data;
-        });
-        break;
-      case DataType.ADVENTURE:
-        this.dataService.getAdventureNotes(this.dataId).subscribe((data) => {
-          this.data = data;
-        });
-        break;
-      default:
-        break;
-    }
+    this.dataService.getData(this.dataType, this.dataId, this.dataField).subscribe((data) => {
+      this.data = {
+        'plain': data.plain,
+        'linked': data.linked
+      };
+      this.may_write = data.may_write;
+      this.may_read = data.may_read;
+    });
   }
 
   startEdit() {
@@ -60,24 +54,7 @@ export class InputBoxComponent implements OnInit {
 
   commit() {
     const value = this.inputGroup.controls['commentInput'].value;
-
-    switch (this.dataType) {
-      case DataType.CHARACTER:
-        this.dataService.setCharacterNotes(this.dataId, value);
-        break;
-      case DataType.SHIP:
-        this.dataService.setShipNotes(this.dataId, value);
-        break;
-      case DataType.LOCATION:
-        this.dataService.setLocationNotes(this.dataId, value);
-        break;
-      case DataType.ADVENTURE:
-        this.dataService.setAdventureNotes(this.dataId, value);
-        break;
-      default:
-        break;
-    }
-
+    this.dataService.storeData(this.dataType, this.dataId, this.dataField, value);
     this.loadData();
     this.editing = false;
   }

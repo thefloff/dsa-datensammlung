@@ -1,34 +1,16 @@
-<div class="container-fluid w-100" *ngIf="adventure">
-  <h4>{{adventure.name}}</h4>
+<div class="container-fluid" *ngIf="visible">
+  <h4>{{name}}</h4>
 
   <div class="row">
 
     <div class="col-12 col-xl-9 order-2 order-xl-1">
-
-      <div *ngIf="adventure.planning">
-        <h5>Planung</h5>
-        <div Markdown [data]="adventure.planning"></div>
-      </div>
-
-      <div *ngIf="adventure.chronic">
-        <h5>Chronik</h5>
-        <div Markdown [data]="adventure.chronic"></div>
-      </div>
-
+      <dsa-input-box [dataName]="'Planung'" [dataType]="DataType.ADVENTURE" [dataId]="id" [dataField]="'planning'"></dsa-input-box>
+      <dsa-input-box [dataName]="'Chronik'" [dataType]="DataType.ADVENTURE" [dataId]="id" [dataField]="'chronic'"></dsa-input-box>
     </div>
 
     <div class="col-12 col-xl-3 order-1 order-xl-2">
-      <div *ngIf="adventure.results">
-        <h5>Resultat</h5>
-        <ul>
-          <li *ngFor="let result of adventure.results">
-            <span Markdown [data]=result></span>
-          </li>
-        </ul>
-      </div>
-
-      <h5>Notitzen</h5>
-      <dsa-comment-box [dataType]="DataType.ADVENTURE" [dataId]="adventure.id"></dsa-comment-box>
+      <dsa-input-box [dataName]="'Resultat'" [dataType]="DataType.ADVENTURE" [dataId]="id" [dataField]="'results'"></dsa-input-box>
+      <dsa-input-box [dataName]="'Notizen'" [dataType]="DataType.ADVENTURE" [dataId]="id" [dataField]="'notes'"></dsa-input-box>
     </div>
 
   </div>

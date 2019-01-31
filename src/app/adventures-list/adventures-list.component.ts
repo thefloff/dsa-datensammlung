@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataType } from '../_shared/dsa-link/dsa-link.component';
+import { DsaDataService } from '../_shared/dsa-data-service';
+import { UserService } from '../_shared/user-service';
 
 @Component({
   selector: 'dsa-adventures-list',
@@ -9,12 +11,17 @@ import { DataType } from '../_shared/dsa-link/dsa-link.component';
 export class AdventuresListComponent implements OnInit {
   DataType = DataType;
 
-  adventures = ['c01a01',
-                'c01e02'];
+  categoriesMap: Map<string, string[]>;
 
-  constructor() { }
+  constructor(private dataService: DsaDataService,
+              private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.onUserChange().subscribe(() => {
+      this.dataService.getAdventuresByCategory().subscribe(data => {
+        this.categoriesMap = data;
+      });
+    });
   }
 
 }

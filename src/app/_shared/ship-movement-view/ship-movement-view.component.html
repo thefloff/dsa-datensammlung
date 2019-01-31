@@ -9,7 +9,7 @@
     <span class="position-absolute"
           style="top: 7%; left: 50%;
       -webkit-transform: translate(-50%, -50%)">
-      {{speed_front}}</span>
+      {{speed['front'] || "0"}}</span>
 
     <img class="position-absolute" src="/assets/img/wind_bottom.png"
          style="top: 92%; left: 50%;
@@ -17,7 +17,7 @@
     <span class="position-absolute"
           style="top: 92%; left: 50%;
       -webkit-transform: translate(-50%, -50%)">
-      {{speed_back}}</span>
+      {{speed['back'] || "0"}}</span>
 
     <img class="position-absolute" src="/assets/img/wind_left.png"
          style="top: 45%; left: 15%;
@@ -25,7 +25,7 @@
     <span class="position-absolute"
           style="top: 45%; left: 15%;
       -webkit-transform: translate(-50%, -50%)">
-      {{speed_left}}</span>
+      {{speed['left'] || "0"}}</span>
 
     <img class="position-absolute" src="/assets/img/wind_right.png"
          style="top: 45%; left: 85%;
@@ -33,12 +33,12 @@
     <span class="position-absolute"
           style="top: 45%; left: 85%;
       -webkit-transform: translate(-50%, -50%)">
-      {{speed_right}}</span>
+      {{speed['right'] || "0"}}</span>
 
     <span class="position-absolute"
           style="top: 43.5%; left: 50%; color: white;
       -webkit-transform: translate(-50%, -50%)">
-      {{maneuver}}</span>
+      {{speed['mobility'] || "0"}}</span>
 
 
   </div>

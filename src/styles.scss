@@ -31,7 +31,7 @@ dsa-sidebar .list-group-flush{
 .list-group-flush .list-group-item{
   border-color: $dsa-dark;
 }
-.list-group-flush .list-group-item:hover{
+.list-group-flush .list-group-item-action:hover{
   background: $dsa-light;
 }
 
@@ -46,13 +46,19 @@ dsa-sidebar .list-group-flush{
   border-bottom: 0;
   border-radius: 0;
 }
-.list-group-sm .list-group-item:hover {
+.list-group-sm .list-group-item-action:hover {
   background: $dsa-light;
 }
-.list-group-sm .card {
-  border: 1px solid $dsa-dark;
-  border-radius: 0;
-  border-bottom: 0;
+
+// table
+.table td, .table th {
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border-bottom: 1px solid $dsa-dark;
+}
+.table thead th {
+  border-bottom: 2px solid $dsa-dark;
+  border-top: 1px solid $dsa-dark;
 }
 
 // collapse
@@ -72,6 +78,15 @@ dsa-sidebar .list-group-flush{
 
 .border-dsa-dark {
   border: 2px solid $dsa-dark;
+}
+
+.border-dsa-dark-thin {
+  border-left: 1px solid $dsa-dark!important;
+  border-right: 1px solid $dsa-dark!important;
+  border-bottom: 1px solid $dsa-dark!important;
+}
+.border-dsa-dark-thin:first-child {
+  border: 1px solid $dsa-dark!important;
 }
 
 // buttons

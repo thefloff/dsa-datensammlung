@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DsaDataService } from '../_shared/dsa-data-service';
-import { CharacterDto } from '../_shared/character-dto';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { UserService } from '../_shared/user-service';
-import { DatabaseService } from '../_shared/database-service';
 import { DataType } from '../_shared/dsa-link/dsa-link.component';
 
 @Component({
@@ -14,25 +12,32 @@ import { DataType } from '../_shared/dsa-link/dsa-link.component';
 })
 export class CharacterComponent implements OnInit {
   DataType = DataType;
-  character: CharacterDto;
   pdfUrl: SafeUrl;
   isCollapsed = true;
+  name: string;
+  id: string;
+  visible = false;
 
   constructor(private route: ActivatedRoute,
               private dataService: DsaDataService,
               private sanitizer: DomSanitizer,
-              private userService: UserService,
-              private database: DatabaseService) { }
+              private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(() => {
+    this.userService.onUserChange().subscribe(() => {
       this.route.paramMap.subscribe((map) => {
-        this.dataService.getCharacter(map.get('id')).subscribe((data) => {
-          if (data) {
-            this.character = data;
-            if (this.character.pdf) {
-              this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/pdf/' + this.character.pdf);
-            }
+        this.id = map.get('id');
+        this.dataService.maySeeData(DataType.CHARACTER, this.id).subscribe(response => {
+          this.visible = response;
+        });
+        this.name = this.dataService.getName(this.id);
+        this.dataService.maySeePdf(DataType.CHARACTER, this.id).subscribe((maySeePdf) => {
+          if (maySeePdf) {
+            this.dataService.hasPdf(this.id).subscribe((hasPdf) => {
+              if (hasPdf) {
+                this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl( 'assets/pdf/' + this.id + '.pdf');
+              }
+            });
           }
         });
       });

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_shared/user-service';
 import { ActivatedRoute } from '@angular/router';
 import { DsaDataService } from '../_shared/dsa-data-service';
-import { AdventureDto } from '../_shared/adventure-dto';
 import { DataType } from '../_shared/dsa-link/dsa-link.component';
 
 @Component({
@@ -12,21 +11,22 @@ import { DataType } from '../_shared/dsa-link/dsa-link.component';
 })
 export class AdventureComponent implements OnInit {
   DataType = DataType;
-
-  adventure: AdventureDto;
+  name: string;
+  id: string;
+  visible = false;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,
               private dataService: DsaDataService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(() => {
+    this.userService.onUserChange().subscribe(() => {
       this.route.paramMap.subscribe((map) => {
-        this.dataService.getAdventure(map.get('id')).subscribe((data) => {
-          if (data) {
-            this.adventure = data;
-          }
+        this.id = map.get('id');
+        this.dataService.maySeeData(DataType.ADVENTURE, this.id).subscribe(response => {
+          this.visible = response;
         });
+        this.name = this.dataService.getName(this.id);
       });
     });
   }

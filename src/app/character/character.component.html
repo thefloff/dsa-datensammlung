@@ -1,5 +1,5 @@
-<div class="container-fluid w-100" *ngIf="character">
-  <h4>{{character.name}}</h4>
+<div class="container-fluid" *ngIf="visible">
+  <h4>{{name}}</h4>
 
   <div class="row">
 
@@ -12,20 +12,12 @@
         </div>
       </div>
 
-      <div *ngIf="character.backstory">
-        <h5>Hintergrundgeschichte</h5>
-        <div Markdown [data]="character.backstory"></div>
-      </div>
+      <dsa-input-box [dataName]="'Hintergrundgeschichte'" [dataType]="DataType.CHARACTER" [dataId]="id" [dataField]="'backstory'"></dsa-input-box>
     </div>
 
     <div class="col-12 col-xl-3 order-1 order-xl-2">
-      <div *ngIf="character.description">
-        <h5>Beschreibung</h5>
-        <div Markdown [data]="character.description"></div>
-      </div>
-
-      <h5>Notitzen</h5>
-      <dsa-comment-box [dataType]="DataType.CHARACTER" [dataId]="character.id"></dsa-comment-box>
+      <dsa-input-box [dataName]="'Beschreibung'" [dataType]="DataType.CHARACTER" [dataId]="id" [dataField]="'description'"></dsa-input-box>
+      <dsa-input-box [dataName]="'Notizen'" [dataType]="DataType.CHARACTER" [dataId]="id" [dataField]="'notes'"></dsa-input-box>
     </div>
 
   </div>

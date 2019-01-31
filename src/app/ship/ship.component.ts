@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ShipDto } from '../_shared/ship-dto';
 import { ActivatedRoute } from '@angular/router';
 import { DsaDataService } from '../_shared/dsa-data-service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
@@ -13,9 +12,11 @@ import { DataType } from '../_shared/dsa-link/dsa-link.component';
 })
 export class ShipComponent implements OnInit {
   DataType = DataType;
-
-  ship: ShipDto;
+  id: string;
+  name: string;
+  visible = false;
   imgUrl: SafeUrl;
+  speed: object;
 
   constructor(private route: ActivatedRoute,
               private dataService: DsaDataService,
@@ -23,13 +24,16 @@ export class ShipComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(() => {
+    this.userService.onUserChange().subscribe(() => {
       this.route.paramMap.subscribe((map) => {
-        this.dataService.getShip(map.get('id')).subscribe((data) => {
-          if (data) {
-            this.ship = data;
-            this.imgUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/img/' + this.ship.image);
-          }
+        this.id = map.get('id');
+        this.dataService.maySeeData(DataType.SHIP, this.id).subscribe(response => {
+          this.visible = response;
+        });
+        this.name = this.dataService.getName(this.id);
+        this.imgUrl = this.sanitizer.bypassSecurityTrustResourceUrl( 'assets/img/' + this.id + '.jpg');
+        this.dataService.getData(DataType.SHIP, this.id, 'speed').subscribe(speed => {
+          this.speed = speed['linked'];
         });
       });
     });
