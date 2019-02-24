@@ -8,79 +8,35 @@
   <div class="row">
 
     <div class="col-12 col-xl-3 order-2 order-xl-1">
-      <div *ngIf="taverns && Object.keys(taverns).length > 0">
-        <h6 class="mt-3">Gashäuser:</h6>
-        <div class="list-group list-group-sm" style="border: 0">
+      <dsa-detail-list-box
+        [dataName]="'Gasthäuser'"
+        [dataType]="DataType.LOCATION"
+        [dataId]="id"
+        [dataField]="'taverns'">
+      </dsa-detail-list-box>
 
-          <div *ngFor="let key of Object.keys(taverns);" class="border-dsa-dark-thin">
-            <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && taverns[key] && taverns[key].length > 0">
-                <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
-                  <li *ngFor="let note of taverns[key]" Markdown [data]=note
-                      class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
-                  </li>
-                </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div *ngIf="shops && Object.keys(shops).length > 0">
-        <h6 class="mt-3">Händler:</h6>
-        <div class="list-group list-group-sm" style="border: 0">
-
-          <div *ngFor="let key of Object.keys(shops);" class="border-dsa-dark-thin">
-            <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && shops[key] && shops[key].length > 0">
-              <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
-                <li *ngFor="let note of shops[key]" Markdown [data]=note
-                    class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <dsa-detail-list-box
+        [dataName]="'Geschäfte'"
+        [dataType]="DataType.LOCATION"
+        [dataId]="id"
+        [dataField]="'shops'">
+      </dsa-detail-list-box>
     </div>
 
     <div class="col-12 col-xl-3 order-3 order-xl-2">
-      <div *ngIf="temples && Object.keys(temples).length > 0">
-        <h6 class="mt-3">Tempel:</h6>
-        <div class="list-group list-group-sm" style="border: 0">
+      <dsa-detail-list-box
+        [dataName]="'Tempel'"
+        [dataType]="DataType.LOCATION"
+        [dataId]="id"
+        [dataField]="'temples'">
+      </dsa-detail-list-box>
 
-          <div *ngFor="let key of Object.keys(temples);" class="border-dsa-dark-thin">
-            <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && temples[key] && temples[key].length > 0">
-              <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
-                <li *ngFor="let note of temples[key]" Markdown [data]=note
-                    class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div *ngIf="others && Object.keys(others).length > 0">
-        <h6 class="mt-3">Sonstige:</h6>
-        <div class="list-group list-group-sm" style="border: 0">
-
-          <div *ngFor="let key of Object.keys(others);" class="border-dsa-dark-thin">
-            <div class="list-group-item list-group-item-action" (click)="openElement === key ? openElement = null : openElement = key" style="border:0">{{key}}</div>
-            <div *ngIf="key === openElement && others[key] && others[key].length > 0">
-              <ul class="list-group list-group-flush" style="margin: 0 1em 1em;">
-                <li *ngFor="let note of others[key]" Markdown [data]=note
-                    class="list-group-item" style="padding-top:2px;padding-bottom:2px;height:auto;border-left:0;border-right:0">
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <dsa-detail-list-box
+        [dataName]="'Sonstige'"
+        [dataType]="DataType.LOCATION"
+        [dataId]="id"
+        [dataField]="'others'">
+      </dsa-detail-list-box>
     </div>
 
     <div class="col-12 col-xl-6 order-1 order-xl-3">

@@ -35,6 +35,7 @@ export class GroupComponent implements OnInit {
         this.name = this.dataService.getName(this.id);
         this.dataService.getData(DataType.GROUP, this.id, 'members').subscribe(data => {
           this.members = data['linked'];
+          if (!this.members) { this.members = []; }
         });
       });
       this.dataService.isOwner(DataType.GROUP, this.id).subscribe(result => {

@@ -2,17 +2,29 @@
   <h5 *ngIf="dataName">{{dataName}}</h5>
 
   <div *ngIf="!editing" class="flex-column">
-    <div Markdown [data]="data.linked"></div>
+    <div *ngIf="data['linked']" class="list-group list-group-sm">
+      <dsa-dsa-link *ngFor="let member of data['linked']"
+                    [type]="DataType.CHARACTER"
+                    [data_id]="member['name']"
+                    [list]="true"
+                    [prefix]="member['prefix']"
+                    [suffix]="member['suffix']"></dsa-dsa-link>
+    </div>
     <div>
       <div *ngIf="may_write || isOwner" class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="startEdit()">Bearbeiten</div>
     </div>
   </div>
   <div *ngIf="editing" class="flex-column w-100 h-100" [formGroup]="inputGroup">
-    <textarea [id]="dataName + dataId + dataField" class="w-100 border-dsa-dark" style="min-height: 10em" [formControlName]="'commentInput'">{{data}}</textarea>
+    <textarea [id]="dataName + dataId + dataField"
+              class="w-100 border-dsa-dark"
+              style="min-height: 10em"
+              [formControlName]="'commentInput'"
+              placeholder="[prefix];ID;[suffix]">
+      {{data['prepared']}}
+    </textarea>
     <div>
       <div class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="commit()">Speichern</div>
       <div class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="abbort()">Abbrechen</div>
-      <a class="btn btn-sm btn-link btn-dsa-link m-1 ml-0" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>
       <i *ngIf="isOwner" class="fas fa-user-lock btn btn-sm btn-dsa-normal m-1 ml-0 float-right" style="line-height: inherit" (click)="openPermissionsForm()"></i>
     </div>
   </div>

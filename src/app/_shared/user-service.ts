@@ -89,7 +89,7 @@ export class UserService {
       return false;
     }
     if (necessary.length === 0) {
-      return true;
+      return false;
     }
     if (!this.currentUser) {
       return false;

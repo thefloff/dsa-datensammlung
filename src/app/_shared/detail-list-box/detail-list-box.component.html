@@ -1,0 +1,42 @@
+<div *ngIf="may_read || isOwner" class="w-100">
+  <h5 *ngIf="dataName">{{dataName}}</h5>
+
+  <div *ngIf="!editing" class="flex-column">
+
+    <div class="list-group list-group-sm" style="border: 0">
+
+      <div *ngIf="data['linked']">
+        <div *ngFor="let key of Object.keys(data['linked']);"
+             class="border-dsa-dark-thin">
+          <div class="list-group-item list-group-item-action"
+               (click)="openElement === key ? openElement = null : openElement = key"
+               style="border:0">
+            {{data['linked'][key]['name']}}
+          </div>
+          <div *ngIf="key === openElement && data['linked'][key]['info'] && data['linked'][key]['info'].length > 0"
+            Markdown [data]="data['linked'][key]['info']"
+            class="mx-4 my-2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div *ngIf="may_write || isOwner" class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="startEdit()">Bearbeiten</div>
+    </div>
+  </div>
+  <div *ngIf="editing" class="flex-column w-100 h-100" [formGroup]="inputGroup">
+    <textarea [id]="dataName + dataId + dataField"
+              class="w-100 border-dsa-dark"
+              style="min-height: 10em"
+              [formControlName]="'commentInput'"
+              placeholder="name:[info];">
+      {{data['prepared']}}
+    </textarea>
+    <div>
+      <div class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="commit()">Speichern</div>
+      <div class="btn btn-sm btn-dsa-normal m-1 ml-0" (click)="abbort()">Abbrechen</div>
+      <a class="btn btn-sm btn-link btn-dsa-link m-1 ml-0" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>
+      <i *ngIf="isOwner" class="fas fa-user-lock btn btn-sm btn-dsa-normal m-1 ml-0 float-right" style="line-height: inherit" (click)="openPermissionsForm()"></i>
+    </div>
+  </div>
+</div>

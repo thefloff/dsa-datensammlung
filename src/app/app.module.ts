@@ -30,6 +30,8 @@ import { GroupComponent } from './group/group.component';
 import { GroupsListComponent } from './groups-list/groups-list.component';
 import { PermissionsFormComponent } from './_shared/permissions-form/permissions-form.component';
 import { EditEntryFormComponent } from './_shared/edit-entry-form/edit-entry-form.component';
+import { LinkListBoxComponent } from './_shared/link-list-box/link-list-box.component';
+import { DetailListBoxComponent } from './_shared/detail-list-box/detail-list-box.component';
 
 const appRoutes: Routes = [
   { path: 'characters', component: CharacterListComponent },
@@ -69,7 +71,9 @@ const appRoutes: Routes = [
     GroupComponent,
     GroupsListComponent,
     PermissionsFormComponent,
-    EditEntryFormComponent
+    EditEntryFormComponent,
+    LinkListBoxComponent,
+    DetailListBoxComponent
   ],
   imports: [
     BrowserModule,

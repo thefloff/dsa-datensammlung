@@ -7,21 +7,18 @@
 
   <div class="row">
 
-    <div class="col-12 col-xl-9 order-2 order-xl-1">
-      <div *ngIf="members && Object.keys(members).length > 0">
-        <h6 class="mt-3">Mitglieder:</h6>
-        <div class="list-group list-group-sm">
-          <dsa-dsa-link *ngFor="let member of members"
-                        [type]="DataType.CHARACTER"
-                        [data_id]="member['name']"
-                        [list]="true"
-                        [prefix]="member['prefix']"
-                        [suffix]="member['suffix']"></dsa-dsa-link>
-        </div>
-      </div>
+    <div class="col-12 col-xl-9 order-1 order-xl-1">
+      <dsa-input-box [dataName]="'Beschreibung'" [dataType]="DataType.GROUP" [dataId]="id" [dataField]="'description'">
+      </dsa-input-box>
     </div>
 
-    <div class="col-12 col-xl-3 order-1 order-xl-2">
+    <div class="col-12 col-xl-3 order-2 order-xl-2">
+      <dsa-link-list-box
+        [dataName]="'Mitglieder'"
+        [dataType]="DataType.GROUP"
+        [entryType]="DataType.CHARACTER"
+        [dataId]="id"
+        [dataField]="'members'"></dsa-link-list-box>
       <dsa-input-box [dataName]="'Notizen'" [dataType]="DataType.GROUP" [dataId]="id" [dataField]="'notes'">
       </dsa-input-box>
     </div>

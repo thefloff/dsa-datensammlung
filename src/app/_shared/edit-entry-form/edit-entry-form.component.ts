@@ -23,7 +23,11 @@ export class EditEntryFormComponent implements OnInit {
 
   save() {
     if (this.creatingNew) {
-      this.dataService.createNewEntry(this.dataType, this.id, {name: this.name, category: this.category});
+      if (this.category) {
+        this.dataService.createNewEntry(this.dataType, this.id, {name: this.name, category: this.category});
+      } else {
+        this.dataService.createNewEntry(this.dataType, this.id, {name: this.name});
+      }
     } else {
 
     }
